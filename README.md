@@ -83,8 +83,16 @@ PUT markets/:id/update
 
 ```javascript
 {
-  "success"  : boolean,
-  "message"  : string
+    "success": boolean,
+    "message": message,
+    "market": {
+        "id": number,
+        "name": string,
+        "balance": number,
+        "createdBy": string,
+        "createdAt": date,
+        "updatedAt": date
+    }
 }
 ```
 
