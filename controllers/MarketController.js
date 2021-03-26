@@ -137,8 +137,11 @@ const show_market = async (req, res) => {
 
 
 const withdraw = async (req, res, next) => {
+
   const t = await sequelize.transaction();
+  
   try {
+    
     const result = await withdrawAndDepositSchema.validateAsync(req.body);
 
     const market = await Market.findOne({

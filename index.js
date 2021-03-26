@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const market_routes = require("./routes/market");
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 4444;
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use('/markets', market_routes);
 app.use(async (req, res, next) => {
   res.status(404).json({
     success: false,
-    message: "not fount"
+    message: "not found"
   });
 });
 
