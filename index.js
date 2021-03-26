@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const market_routes = require("./routes/market");
 
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT || 80;
 
 const app = express();
 
