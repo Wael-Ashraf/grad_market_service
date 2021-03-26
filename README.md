@@ -87,7 +87,7 @@ PUT markets/:id/update
         "id": number,
         "name": string,
         "balance": number,
-        "createdBy": string,
+        "createdBy": number,
         "createdAt": date,
         "updatedAt": date
     }
@@ -116,7 +116,7 @@ GET /markets/:id
         "id": number,
         "name": string,
         "balance": number,
-        "createdBy": string,
+        "createdBy": number,
         "createdAt": date,
         "updatedAt": date
     }
