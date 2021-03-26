@@ -153,21 +153,28 @@ POST /markets/:id/withdraw
 }
 ```
 
-### logout endpoint
+### Market Deposit
 ```http
-POST /auth/teacher/logout
+POST /markets/:id/deposit
 ```
-
-| Header | Value |Description |
+| Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `Authorization` | `Bearer "accessToken"` | **Required**. |
+| `id` | `number` | **Required in url**. |
+| `balance` | `number` | **Required**. |
 
 
 ### Response
 
 ```javascript
 {
-  "success"  : boolean,
-  "message"  : string
+    "success": boolean,
+    "market": {
+        "id": number,
+        "name": string,
+        "balance": number,
+        "createdBy": number,
+        "createdAt": date,
+        "updatedAt": date
+    }
 }
 ```
