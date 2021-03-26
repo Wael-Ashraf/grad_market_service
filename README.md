@@ -2,11 +2,7 @@
 
 ## Info
 Market service is responsible of all CRUD operations that related to the markets.
-## Every market has:
-*id
-*name
-*balance
-*createdBy
+
 
 
 
