@@ -2,11 +2,26 @@
 
 ## Info
 Market service is responsible of all CRUD operations that related to the markets.
-## Market service Endpoints
+## Market Service Endpoints
+
+### Get all markets
+```http
+GET /markets/
+```
+
+### Response
+
+```javascript
+{
+  "success"  : boolean,
+  "market" : array
+}
+
+```
 
 ### Create new market
 ```http
-POST /market/
+POST /markets/
 ```
 
 | Parameter | Type | Description |
@@ -24,40 +39,40 @@ POST /market/
       "balance" : number,
       "id" : number,
       "name" : string,
-      "createdBy" : number
+      "createdBy" : number,
+      "updatedAt" : date,
+      "createdAt" : date
   }
 }
 
 ```
 
-### refresh endpoint
+### Delete Market
 ```http
-POST /auth/student/refresh
+DELETE /markets/:id/destroy
 ```
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `refreshToken` | `string` | **Required**. |
+| `id` | `number` | **Required in url**. |
 
 
 ### Response
 
 ```javascript
 {
-  "access_token"  : string,
-  "refresh_token" : string,
-  "type"          : string,
-  "expiresIn"     : string
+    "success": boolean,
+    "message": message
 }
 ```
-### logout endpoint
+### Update Market
 ```http
-POST /auth/student/logout
+PUT markets/:id/update
 ```
 
 | Header | Value |Description |
 | :--- | :--- | :--- |
-| `Authorization` | `Bearer "accessToken"` | **Required**. |
+| `name` | `string` | **Required**. |
 
 
 ### Response
