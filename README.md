@@ -1,7 +1,7 @@
 # Market Service
 
 ## Info
-Market service is responsible of all CRUD operations that related to the markets.
+Market service is responsible for all CRUD ( create, read, update, delete ) operations that related to the markets.
 
 
 ## Market Service Endpoints
