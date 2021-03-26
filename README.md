@@ -126,24 +126,30 @@ GET /markets/:id
 
 ```
 
-### refresh endpoint
+### Market Withdraw
 ```http
-POST /auth/teacher/refresh
+POST /markets/:id/withdraw
 ```
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `refreshToken` | `string` | **Required**. |
+| `id` | `number` | **Required in url**. |
+| `balance` | `number` | **Required**. |
 
 
 ### Response
 
 ```javascript
 {
-  "access_token"  : string,
-  "refresh_token" : string,
-  "type"          : string,
-  "expiresIn"     : string
+    "success": boolean,
+    "market": {
+        "id": number,
+        "name": string,
+        "balance": number,
+        "createdBy": number,
+        "createdAt": date,
+        "updatedAt": date
+    }
 }
 ```
 
