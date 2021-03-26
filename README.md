@@ -98,28 +98,30 @@ PUT markets/:id/update
 
 
 
-
-## Teacher Authentication Endpoints
-
-### login endpoint
+### Select Specific Market
 ```http
-POST /auth/teacher/login
+GET /markets/:id
 ```
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `email` | `string` | **Required**. |
-| `password` | `string` | **Required**. |
+| `id` | `number` | **Required in url**. |
+
 
 
 ## Response
 
 ```javascript
 {
-  "access_token"  : string,
-  "refresh_token" : string,
-  "type"          : string,
-  "expiresIn"     : string
+    "success": boolean,
+    "market": {
+        "id": number,
+        "name": string,
+        "balance": number,
+        "createdBy": string,
+        "createdAt": date,
+        "updatedAt": date
+    }
 }
 
 ```
